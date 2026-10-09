@@ -26,3 +26,7 @@ Las partidas se guardan por navegador y dispositivo; no se guardan dentro del NF
 Dos llaveros del mismo juego abiertos en el mismo navegador comparten la partida.
 Prueba guardar dentro del juego, esperar 10 segundos, cerrar y volver a abrir antes de entregar un llavero. Exporta también una copia de respaldo desde el emulador.
 Controles táctiles: prueba desde el celular; si están ocultos, activa el mando virtual en el menú del emulador.
+
+ACTUALIZACION PANTALLA COMPLETA: Reemplaza los cinco HTML (incluido index.html). El botón aparece encima del juego después de pulsar Jugar. Si el navegador rechaza la pantalla completa, se amplía dentro de la ventana y muestra un botón Salir. Los nombres de ROM y guardado se conservan.
+
+DISEÑO LUMINA: Copia también lumina.png junto a los cinco HTML. El logo es la imagen proporcionada. No cambies su nombre.
