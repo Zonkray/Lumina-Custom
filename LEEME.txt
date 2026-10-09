@@ -1,0 +1,28 @@
+LUMINA CUSTOM — CUATRO JUEGOS NFC
+
+Copia los cuatro archivos HTML junto a tu index.html actual. Conserva index.html: el enlace anterior seguirá funcionando.
+No se incluyen juegos ni imágenes de portada.
+
+Añade los archivos de juego con estos nombres exactos en la misma carpeta:
+pokemon-rojo-fuego.gba
+pokemon-verde-hoja.gba
+pokemon-azul.gb
+pokemon-amarillo.gb
+
+Portadas opcionales: portada-rojo-fuego.jpg, portada-verde-hoja.jpg, portada-azul.jpg y portada-amarillo.jpg.
+Sin imágenes se muestra la portada de texto.
+
+En GitHub Desktop: Commit to main y Push origin. Si copiaste archivos desde GitHub web, primero Fetch origin / Pull origin.
+Espera a que Actions publique correctamente.
+
+ENLACES PARA LOS NFC
+https://zonkray.github.io/Lumina-Custom/rojo-fuego.html
+https://zonkray.github.io/Lumina-Custom/verde-hoja.html
+https://zonkray.github.io/Lumina-Custom/azul.html
+https://zonkray.github.io/Lumina-Custom/amarillo.html
+
+Cada juego tiene identificador propio. Rojo Fuego conserva el ID anterior.
+Las partidas se guardan por navegador y dispositivo; no se guardan dentro del NFC.
+Dos llaveros del mismo juego abiertos en el mismo navegador comparten la partida.
+Prueba guardar dentro del juego, esperar 10 segundos, cerrar y volver a abrir antes de entregar un llavero. Exporta también una copia de respaldo desde el emulador.
+Controles táctiles: prueba desde el celular; si están ocultos, activa el mando virtual en el menú del emulador.

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#141020">
+<title>Pokémon Amarillo · Pikachu · Lumina Custom</title>
+<style>
+*{box-sizing:border-box}html{color-scheme:dark}body{margin:0;background:#141020;color:#faf6ff;font:16px/1.6 system-ui,sans-serif}main{max-width:980px;margin:auto;padding:24px 18px}header{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #493450;padding-bottom:18px}.brand{font-weight:900;letter-spacing:.12em}.brand span{color:#f6a84f}.edition{font-size:14px;color:#c6b6d2}.cover{margin:32px auto;padding:42px 26px;max-width:620px;text-align:center;border:1px solid #77516a;border-radius:24px;background:linear-gradient(140deg,#3f1835,#231429 55%,#4b4017);box-shadow:0 20px 70px #0005}.label{font-size:14px;letter-spacing:.18em;color:#ffe575}h1{font-size:clamp(2.3rem,8vw,4.3rem);line-height:1.1;margin:20px 0 12px}h1 span{display:block;color:#ffe575}.cover p{color:#dfcde5}.cover img{display:block;max-width:280px;width:100%;margin:0 auto 24px;border-radius:12px}.cover img[hidden]{display:none}button{font:700 18px system-ui;min-height:52px;padding:15px 36px;border:0;border-radius:12px;cursor:pointer;background:#ffe575;color:#211022}button:hover{background:#ffdaa6}button:focus-visible,a:focus-visible{outline:3px solid #fff;outline-offset:5px}button:disabled{opacity:.65;cursor:wait}.status{min-height:26px;color:#ffcf9d}.player{border:1px solid #68435d;border-radius:16px;overflow:hidden;background:#000;height:76vh;min-height:420px;max-height:820px}.player[hidden]{display:none}#game{width:100%;height:100%}.help{max-width:760px;margin:24px auto;color:#c9bbd3}.help h2{font-size:20px;color:#fff}.help p{margin:10px 0}.help strong{color:#fff}footer{margin:28px 0;font-size:14px;color:#b9a7c4;text-align:center}@media(max-width:480px){header{gap:12px;align-items:flex-start}.edition{max-width:95px;text-align:right}.cover{padding:30px 18px;margin:24px auto}.player{height:78svh;min-height:400px}}
+</style>
+</head>
+<body>
+<main>
+<header><div class="brand">LUMINA <span>CUSTOM</span></div><span class="edition">Colección NFC · GB</span></header>
+<section class="cover" id="cover" aria-labelledby="title">
+<img id="art" src="./portada-amarillo.jpg" alt="Portada de Pokémon Amarillo · Pikachu" hidden>
+<div class="label">GAME BOY</div>
+<h1 id="title">Pokémon<span>Amarillo · Pikachu</span></h1>
+<p>Tu aventura, a un toque de distancia.</p>
+<button id="play" type="button">Jugar</button>
+<p>¿Ya tienes una partida? Entra al juego y elige Continuar.</p>
+</section>
+<p class="status" id="status" role="status" aria-live="polite"></p>
+<section id="player" class="player" hidden aria-label="Emulador de Game Boy"><div id="game"></div></section>
+<section class="help">
+<h2>Tu partida</h2>
+<p><strong>Guarda desde el menú de Pokémon</strong> y espera al menos 10 segundos antes de cerrar. Vuelve desde el mismo celular y navegador para continuar.</p>
+<p>En el menú del emulador puedes <strong>descargar y cargar un estado</strong> para respaldar tu avance. Conserva ese archivo para cambiar de celular.</p>
+<p>Cada navegador conserva sus propios datos. No se sincronizan entre dispositivos. Evita el modo incógnito y no borres los datos del sitio sin hacer un respaldo.</p>
+</section>
+<footer>Lumina Custom · Página independiente, sin afiliación con Nintendo o The Pokémon Company.</footer>
+</main>
+<script>
+'use strict';
+// Aloja únicamente archivos que tengas autorización para distribuir.
+// Ruta relativa: compatible con GitHub Pages bajo /Lumina-Custom/.
+const ROM_URL = './pokemon-amarillo.gb';
+const DATA_URL = 'https://cdn.emulatorjs.org/stable/data/';
+const button = document.getElementById('play');
+const statusBox = document.getElementById('status');
+const art = document.getElementById('art');
+art.onload = () => { art.hidden = false; };
+if (art.complete && art.naturalWidth) art.hidden = false;
+let starting = false;
+function failure(message) {
+  statusBox.textContent = message;
+  button.disabled = false;
+  button.textContent = 'Reintentar';
+  starting = false;
+}
+button.addEventListener('click', async () => {
+  if (starting) return;
+  if (document.getElementById('emulator-loader')) { location.reload(); return; }
+  starting = true; button.disabled = true;
+  statusBox.textContent = 'Preparando el juego…';
+  try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 20000);
+    let response;
+    try { response = await fetch(ROM_URL, {method:'HEAD',signal:controller.signal}); }
+    finally { clearTimeout(timeout); }
+    if (!response.ok || (response.headers.get('content-type') || '').includes('text/html')) {
+      throw new Error('La página está lista, pero falta el archivo del juego en el alojamiento.');
+    }
+    window.EJS_player = '#game';
+    window.EJS_core = 'gb';
+    window.EJS_gameUrl = ROM_URL;
+    window.EJS_gameName = 'Lumina-Pokemon-amarillo';
+    window.EJS_gameID = 1006;
+    window.EJS_pathtodata = DATA_URL;
+    window.EJS_language = 'es-ES';
+    window.EJS_startOnLoaded = true;
+    window.EJS_threads = false;
+    window.EJS_fixedSaveInterval = 10000;
+    window.EJS_color = '#c49a21';
+    window.EJS_Buttons = {
+      saveState: true, loadState: true, saveSavFiles: true,
+      loadSavFiles: true, fullscreen: true, settings: true,
+      screenRecord: false, cheat: false
+    };
+    window.EJS_ready = () => { statusBox.textContent = 'Emulador listo. Si lo solicita, toca su botón de inicio.'; };
+    window.EJS_onSaveUpdate = () => {
+      statusBox.textContent = 'El emulador detectó una actualización de tu partida. Haz un respaldo para conservarla fuera de este navegador.';
+    };
+    document.getElementById('cover').hidden = true;
+    document.getElementById('player').hidden = false;
+    statusBox.textContent = 'Cargando el emulador… La primera vez puede tardar.';
+    const loader = document.createElement('script');
+    loader.id = 'emulator-loader'; loader.src = DATA_URL + 'loader.js';
+    loader.onerror = () => {
+      document.getElementById('cover').hidden = false;
+      document.getElementById('player').hidden = true;
+      failure('No se pudo descargar el emulador. Comprueba tu conexión y pulsa Reintentar.');
+    };
+    document.body.appendChild(loader);
+  } catch (error) {
+    failure(error.name === 'AbortError' ? 'La conexión tardó demasiado. Vuelve a intentarlo.' : (error.message || 'No se pudo iniciar el juego.'));
+  }
+});
+</script>
+</body>
+</html>
