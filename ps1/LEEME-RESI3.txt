@@ -1,0 +1,37 @@
+RESIDENT EVIL 3 - PS1 PARA LUMINA CUSTOM
+
+1. En GitHub Desktop, pulsa Cancel en el aviso Files too large.
+2. Extrae el ZIP y COPIA su contenido dentro de tu carpeta ps1.
+   Reemplaza resident-evil-3.html cuando Windows lo pregunte.
+   No reemplaces toda la carpeta ps1 ni borres tu juego.
+3. resi3.bin debe estar en esa misma carpeta ps1.
+4. Haz doble clic en PREPARAR-RESI3.cmd. Espera el mensaje LISTO.
+   El programa conserva resi3.bin, genera partes de hasta 50 MiB y una lista JSON.
+   No cambia la politica permanente de PowerShell: el permiso solo se usa en ese proceso.
+5. En Changes deben aparecer el HTML, resi3-manifest.json, la carpeta
+   resi3-partes y .gitignore. resi3.bin NO debe estar seleccionado ni aparecer
+   como nuevo archivo para subir. Si sigue apareciendo, no hagas commit:
+   envia una captura antes de continuar.
+6. Necesitas tu BIOS scph5501.bin junto al HTML si el disco es de America.
+   Si es otra region, configura BIOS_URL con la BIOS correspondiente.
+   El juego y la BIOS no vienen en este paquete.
+7. Guarda esos cambios y pulsa Push origin. Conserva lumina.png en la carpeta
+   superior. portada-resident-evil-3.jpg es opcional y va dentro de ps1.
+8. Abre la URL de GitHub Pages que termina en /ps1/resident-evil-3.html.
+   Esa es la URL para grabar en el NFC.
+
+La pagina descarga las partes, comprueba sus tamanos y SHA-256, y las reune
+como resi3.bin antes de iniciar EmulatorJS. No tienes que escoger el juego.
+No convierte el disco ni reduce el tamano total. La primera carga puede
+consumir varios cientos de MB; el telefono necesita memoria suficiente.
+El sitio completo debe respetar el limite de publicacion de GitHub Pages
+(1 GB); dividir archivos no aumenta ese limite.
+
+Validacion: se comprobaron la sintaxis del HTML, el ensamblado exacto con
+partes de prueba y los avisos de integridad o archivos faltantes.
+Falta ejecutar el preparador en tu Windows y probar TU disco y BIOS.
+No se garantiza que un BIN incompleto, con pistas faltantes o de otra region
+arranque solo por cambiar el HTML.
+
+No uses Git LFS como solucion para GitHub Pages: no sirve estos archivos.
+No vuelvas a confirmar el BIN o el ISO grandes en el historial del repositorio.

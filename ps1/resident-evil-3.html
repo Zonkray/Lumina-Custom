@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#141020">
+<title>Resident Evil 3 · Lumina Custom</title>
+<style>
+*{box-sizing:border-box}html{color-scheme:dark}body{margin:0;background:#08070c;color:#faf7ff;font:16px/1.65 system-ui,sans-serif;background-image:radial-gradient(ellipse at 75% 5%,#52217444,transparent 55%)}main{max-width:1100px;margin:auto;padding:24px}header{display:flex;justify-content:space-between;align-items:center;padding:0 0 22px;border-bottom:1px solid #ffffff15}.brand{font-size:16px;font-weight:900;letter-spacing:.17em}.brand span{color:#d09bff}.edition{color:#b2a5c3;font-size:12px;letter-spacing:.1em}.cover{position:relative;display:grid;grid-template-columns:1.1fr 1fr;align-items:center;margin:32px 0 24px;min-height:560px;padding:42px;overflow:hidden;border:1px solid #9e69c533;border-radius:28px;background:radial-gradient(ellipse at 80% 50%,#773aa22e,transparent 65%),linear-gradient(130deg,#15101e,#0b0910);box-shadow:0 24px 90px #0005}.cover[hidden]{display:none}.cover:before{content:'';position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(#ffffff03 1px,transparent 1px),linear-gradient(90deg,#ffffff03 1px,transparent 1px);background-size:48px 48px}.hero-copy,.hero-art{position:relative}.hero-art img{width:100%;max-width:480px;display:block;filter:drop-shadow(0 0 26px #8d30c82a)}.eyebrow{display:flex;align-items:center;gap:9px;font-size:11px;letter-spacing:.18em;color:#e8b9ff;font-weight:700}.eyebrow:before{content:'';width:7px;height:7px;background:#d884ff;border-radius:50%;box-shadow:0 0 15px #c558ff}.label{margin:30px 0 12px;color:#b29cbf;font-size:11px;letter-spacing:.22em}h1{font-size:clamp(38px,5.6vw,66px);line-height:1.04;letter-spacing:-.045em;margin:0 0 22px}h1 span{display:block;margin-top:7px;color:#e3b5ff}.tagline{max-width:340px;color:#b9acc6;margin:0 0 28px}.cover img#art{max-width:190px;max-height:240px;object-fit:contain;margin:0 0 20px;border-radius:10px}.cover img[hidden]{display:none!important}button{font:700 16px system-ui;min-height:50px;border:1px solid #e8baff35;border-radius:13px;padding:15px 25px;background:linear-gradient(120deg,#8737cb,#b356e0);color:white;cursor:pointer;box-shadow:0 8px 30px #963cd92a}button:hover{filter:brightness(1.12)}button:focus-visible{outline:3px solid white;outline-offset:4px}button:disabled{opacity:.65;cursor:wait}.continue{font-size:12px;color:#9e90ae;margin:18px 0 0}.hero-note{display:flex;gap:10px;margin-top:30px;color:#ac99bd;font-size:11px;letter-spacing:.12em}.hero-note span{padding:5px 10px;border:1px solid #ffffff12;border-radius:6px}.status{font-size:14px;color:#dec0ef;margin:12px 0}.status:empty{display:none}.player{position:relative;border:1px solid #b25ee450;border-radius:18px;overflow:hidden;background:black;height:76vh;min-height:420px;max-height:820px}.player[hidden]{display:none}#game{width:100%;height:100%}.play-tools{display:flex;margin:16px 0;gap:12px}.play-tools[hidden]{display:none}.help{padding:26px 30px;margin:24px 0;border:1px solid #ffffff10;border-radius:18px;background:#110d18;color:#ad9fb9;font-size:14px}.help h2{margin:0 0 14px;font-size:19px;color:white}.help p{margin:10px 0}.help strong{color:#e9d8f5}footer{text-align:center;margin:30px 0 10px;font-size:11px;color:#82728f}.player:fullscreen,.player.expanded{width:100vw;height:100dvh;max-height:none;min-height:0;border:0;border-radius:0}.player.expanded{position:fixed;inset:0;z-index:10000}.exit-expanded{position:absolute;top:8px;left:8px;z-index:10001;font-size:13px;min-height:40px;padding:8px 12px;background:#251a32ee}.exit-expanded[hidden]{display:none}body.game-expanded{overflow:hidden}#game .ejs_menu_bar{max-height:100%;overflow-y:auto;overscroll-behavior:contain}
+@media(max-width:650px){main{padding:18px 16px}header{gap:12px}.brand{font-size:13px}.edition{font-size:10px;max-width:95px;text-align:right}.cover{grid-template-columns:1fr;padding:26px 24px;margin:22px 0;min-height:0}.hero-art{grid-row:1;text-align:center}.hero-art img{max-width:240px;margin:0 auto 20px}.hero-copy{text-align:center}.eyebrow{justify-content:center}.label{margin:20px 0 12px}h1{font-size:43px}.tagline{margin:0 auto 24px}.hero-note{justify-content:center;margin-top:22px}.cover img#art{margin:0 auto 18px}#play{width:100%}.player{height:78svh;min-height:400px}.help{padding:22px;font-size:13px}.play-tools button{width:100%}}@media(max-height:500px) and (orientation:landscape){.player{height:90dvh;min-height:0}}
+</style>
+</head>
+<body>
+<main>
+<header><div class="brand">LUMINA <span>CUSTOM</span></div><span class="edition">Colección NFC · PS1</span></header>
+<section class="cover" id="cover" aria-labelledby="title">
+<div class="hero-copy"><img id="art" src="./portada-resident-evil-3.jpg" alt="Portada de Resident Evil 3" hidden>
+<div class="eyebrow">SOBREVIVE A RACCOON CITY</div><div class="label">PLAYSTATION · PS1</div>
+<h1 id="title">Resident Evil 3<span>Nemesis</span></h1>
+<p class="tagline">Un toque a tu llavero. La pesadilla comienza de nuevo.</p>
+<button id="play" type="button">▶ Jugar ahora</button>
+<p class="continue">Controles táctiles en celular y opciones de mando en el emulador.</p>
+<div class="hero-note"><span>COLECCIÓN NFC</span><span>LUMINA CUSTOM</span></div></div><div class="hero-art"><img src="../lumina.png" alt="Lumina Custom · Tu idea hecha realidad"></div></section>
+<p class="status" id="status" role="status" aria-live="polite"></p>
+<div id="play-tools" class="play-tools" hidden><button id="fullscreen" type="button">⛶ Pantalla completa</button></div>
+<section id="player" class="player" hidden aria-label="Emulador de PlayStation 1"><button id="exit-expanded" class="exit-expanded" type="button" hidden>Salir de pantalla ampliada</button><div id="game"></div></section>
+<section class="help">
+<h2>Tu partida</h2>
+<p><strong>Guarda desde el menú del juego en la tarjeta de memoria virtual</strong> y espera al menos 10 segundos antes de cerrar. Vuelve desde el mismo celular y navegador para continuar.</p>
+<p>En el menú del emulador puedes <strong>descargar y cargar un estado</strong> para respaldar tu avance. Conserva ese archivo para cambiar de celular.</p>
+<p>Cada navegador conserva sus propios datos. No se sincronizan entre dispositivos. Evita el modo incógnito y no borres los datos del sitio sin hacer un respaldo.</p>
+</section>
+<footer>Lumina Custom · Página independiente, sin afiliación con Sony Interactive Entertainment.</footer>
+</main>
+<script>
+'use strict';
+// Aloja únicamente archivos que tengas autorización para distribuir.
+// Ruta relativa: compatible con GitHub Pages bajo /Lumina-Custom/.
+// Ejecuta PREPARAR-RESI3.cmd junto a resi3.bin antes de subir la carpeta ps1.
+// El juego se carga desde resi3-manifest.json y resi3-partes, sin subir el BIN completo.
+// La BIOS configurada es de América: ajusta BIOS_URL si tu juego es de otra región.
+// lumina.png puede permanecer en la carpeta superior (ruta ../lumina.png).
+// portada-resident-evil-3.jpg es opcional y va en ps1.
+// EmulatorJS genera el CUE automáticamente para la imagen BIN.
+// Si la copia requiere pistas adicionales o subcanales, el BIN solo puede no bastar.
+const MANIFEST_URL = './resi3-manifest.json';
+const BIOS_URL = './scph5501.bin';
+const GAME_NAME = 'Lumina-Resident-Evil-3-Nemesis';
+const GAME_ID = 21003;
+const DATA_URL = 'https://cdn.emulatorjs.org/stable/data/';
+const button = document.getElementById('play');
+const statusBox = document.getElementById('status');
+const brandImage = document.querySelector('.hero-art img');
+if (brandImage) brandImage.onerror = () => { brandImage.hidden = true; };
+const art = document.getElementById('art');
+art.onload = () => { art.hidden = false; };
+if (art.complete && art.naturalWidth) art.hidden = false;
+
+const playerBox = document.getElementById('player');
+const fullscreenButton = document.getElementById('fullscreen');
+const exitButton = document.getElementById('exit-expanded');
+function expandFallback() {
+ playerBox.classList.add('expanded'); document.body.classList.add('game-expanded');
+ exitButton.hidden = false;
+}
+fullscreenButton.addEventListener('click', async () => {
+ try {
+  if (!playerBox.requestFullscreen) { expandFallback(); return; }
+  await playerBox.requestFullscreen();
+ } catch (_) { expandFallback(); }
+});
+exitButton.addEventListener('click', () => {
+ playerBox.classList.remove('expanded'); document.body.classList.remove('game-expanded'); exitButton.hidden = true;
+});
+
+async function loadDiscParts() {
+  const manifestResponse = await fetch(MANIFEST_URL, {cache:'no-cache'});
+  if (!manifestResponse.ok) throw new Error('Falta resi3-manifest.json. Ejecuta PREPARAR-RESI3.cmd y sube el resultado.');
+  const manifest = await manifestResponse.json();
+  if (manifest.version !== 1 || manifest.originalName !== 'resi3.bin' ||
+      !Number.isSafeInteger(manifest.bytes) || manifest.bytes <= 0 || manifest.bytes > 900 * 1024 * 1024 ||
+      !Array.isArray(manifest.parts) || !manifest.parts.length || manifest.parts.length > 32) {
+    throw new Error('La lista de partes no es valida. Vuelve a preparar el disco.');
+  }
+  let expectedBytes = 0;
+  for (let index = 0; index < manifest.parts.length; index++) {
+    const part = manifest.parts[index];
+    if (part.file !== `resi3.${String(index).padStart(3,'0')}.part` ||
+        !Number.isSafeInteger(part.bytes) || part.bytes <= 0 || part.bytes > 50 * 1024 * 1024 ||
+        !/^[a-f0-9]{64}$/.test(part.sha256)) throw new Error('La lista de partes esta incompleta o alterada.');
+    expectedBytes += part.bytes;
+  }
+  if (expectedBytes !== manifest.bytes) throw new Error('El tamano total de las partes no coincide.');
+  if (!globalThis.crypto?.subtle) throw new Error('Abre el sitio con HTTPS para comprobar el juego.');
+  const chunks = [];
+  let downloaded = 0;
+  for (let index = 0; index < manifest.parts.length; index++) {
+    const part = manifest.parts[index];
+    statusBox.textContent = `Descargando el juego: parte ${index + 1} de ${manifest.parts.length} (${Math.floor(downloaded / manifest.bytes * 100)} %). La primera carga puede tardar.`;
+    const response = await fetch(`./resi3-partes/${part.file}`);
+    if (!response.ok) throw new Error(`No se pudo descargar ${part.file}. Comprueba que se subieron todas las partes.`);
+    const chunk = await response.arrayBuffer();
+    if (chunk.byteLength !== part.bytes) throw new Error(`La parte ${index + 1} esta incompleta. Vuelve a cargar la pagina.`);
+    const digest = await crypto.subtle.digest('SHA-256', chunk);
+    const actualHash = Array.from(new Uint8Array(digest), byte => byte.toString(16).padStart(2,'0')).join('');
+    if (actualHash !== part.sha256) throw new Error(`La parte ${index + 1} no coincide con el disco original. Vuelve a subir esa parte.`);
+    chunks.push(chunk);
+    downloaded += chunk.byteLength;
+  }
+  statusBox.textContent = 'Juego descargado y verificado. Preparando PlayStation 1...';
+  const disc = new File(chunks, manifest.originalName, {type:'application/octet-stream'});
+  chunks.length = 0;
+  return disc;
+}
+
+let starting = false;
+function failure(message) {
+  statusBox.textContent = message;
+  button.disabled = false;
+  button.textContent = 'Reintentar';
+  starting = false;
+}
+button.addEventListener('click', async () => {
+  if (starting) return;
+  if (document.getElementById('emulator-loader')) { location.reload(); return; }
+  starting = true; button.disabled = true;
+  statusBox.textContent = 'Comprobando el juego y la BIOS de PS1…';
+  try {
+    if (location.protocol === 'file:') {
+      throw new Error('Abre esta página desde tu sitio de GitHub Pages o un servidor web, no como archivo local.');
+    }
+    async function checkFile(url, message) {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 20000);
+      try {
+        const response = await fetch(url, {method:'HEAD', signal:controller.signal});
+        if (!response.ok || (response.headers.get('content-type') || '').includes('text/html')) {
+          throw new Error(message);
+        }
+      } finally { clearTimeout(timeout); }
+    }
+    await checkFile(BIOS_URL, 'No se encontró la BIOS. Sube scph5501.bin junto a esta página o ajusta BIOS_URL según la región del juego.');
+    const discFile = await loadDiscParts();
+    window.EJS_player = '#game';
+    window.EJS_core = 'psx';
+    window.EJS_disableCue = false;
+    window.EJS_biosUrl = BIOS_URL;
+    window.EJS_gameUrl = discFile;
+    window.EJS_gameName = GAME_NAME;
+    window.EJS_gameID = GAME_ID;
+    window.EJS_pathtodata = DATA_URL;
+    window.EJS_language = 'es-ES';
+    window.EJS_startOnLoaded = true;
+    window.EJS_threads = false;
+    window.EJS_fixedSaveInterval = 10000;
+    window.EJS_color = '#a64cdb';
+    window.EJS_Buttons = {
+      saveState: true, loadState: true, saveSavFiles: true,
+      loadSavFiles: true, fullscreen: true, settings: true,
+      screenRecord: false, cheat: false
+    };
+    window.EJS_ready = () => { statusBox.textContent = 'Emulador de PS1 listo. Si lo solicita, toca su botón de inicio.'; };
+    window.EJS_onSaveUpdate = () => {
+      statusBox.textContent = 'El emulador detectó una actualización de tu partida. Haz un respaldo para conservarla fuera de este navegador.';
+    };
+    document.getElementById('cover').hidden = true;
+    document.getElementById('player').hidden = false;
+    document.getElementById('play-tools').hidden = false;
+    statusBox.textContent = 'Cargando el emulador… La primera vez puede tardar.';
+    const loader = document.createElement('script');
+    loader.id = 'emulator-loader'; loader.src = DATA_URL + 'loader.js';
+    loader.onerror = () => {
+      document.getElementById('cover').hidden = false;
+      document.getElementById('player').hidden = true;
+      document.getElementById('play-tools').hidden = true;
+      failure('No se pudo descargar el emulador. Comprueba tu conexión y pulsa Reintentar.');
+    };
+    document.body.appendChild(loader);
+  } catch (error) {
+    failure(error.name === 'AbortError' ? 'La conexión tardó demasiado. Vuelve a intentarlo.' : (error.message || 'No se pudo iniciar el juego.'));
+  }
+});
+</script>
+</body>
+</html>

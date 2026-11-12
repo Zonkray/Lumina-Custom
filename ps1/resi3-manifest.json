@@ -1,0 +1,77 @@
+{
+    "version":  1,
+    "originalName":  "resi3.bin",
+    "bytes":  713408640,
+    "parts":  [
+                  {
+                      "file":  "resi3.000.part",
+                      "bytes":  52428800,
+                      "sha256":  "eff3aa70fc3d34e7b30335f24c48a7e4d6af5e35a9e5af3062bed5c59598ed4a"
+                  },
+                  {
+                      "file":  "resi3.001.part",
+                      "bytes":  52428800,
+                      "sha256":  "b2a46080e519ff678b70fe74fa7fc64787f8f0461c2d8e981e65f4081b802cee"
+                  },
+                  {
+                      "file":  "resi3.002.part",
+                      "bytes":  52428800,
+                      "sha256":  "939eabd585028ef3d25e72207b53d2cf6c364aca1da9d95420a58f8a6e2cdaa6"
+                  },
+                  {
+                      "file":  "resi3.003.part",
+                      "bytes":  52428800,
+                      "sha256":  "ec8ab71261d99a6330069e518d0ef866cb254ba8decc200a27210a11baecd7de"
+                  },
+                  {
+                      "file":  "resi3.004.part",
+                      "bytes":  52428800,
+                      "sha256":  "277d571ff73b7bf9d2124cf41c714e362746a2df88b94bbf66cc49cb0c895a39"
+                  },
+                  {
+                      "file":  "resi3.005.part",
+                      "bytes":  52428800,
+                      "sha256":  "fbd9ac6d13b46a3ca59a195c0deb820633728a251cb172e5cb224f7882d14b69"
+                  },
+                  {
+                      "file":  "resi3.006.part",
+                      "bytes":  52428800,
+                      "sha256":  "f64fbe116e811053878f541103699a44ab13631b1fcf3ceadbcdb11981a745c2"
+                  },
+                  {
+                      "file":  "resi3.007.part",
+                      "bytes":  52428800,
+                      "sha256":  "cc511d1a8ffb1534ed511a1728991de9eb8b2537f0891eb826aff6f819b9f2dd"
+                  },
+                  {
+                      "file":  "resi3.008.part",
+                      "bytes":  52428800,
+                      "sha256":  "c4e47e222cdd131e26aec472ac6c0f08baeab22e44dc7a4af97a42e132f88941"
+                  },
+                  {
+                      "file":  "resi3.009.part",
+                      "bytes":  52428800,
+                      "sha256":  "ce699b3e250cf3b73c87de832db55a4d990e22ccf23c5424357916eef6d625d4"
+                  },
+                  {
+                      "file":  "resi3.010.part",
+                      "bytes":  52428800,
+                      "sha256":  "b9008daaf5829ab0746aa9cd230583ed5b7fd5de4d7cb858e1f58135ddc64462"
+                  },
+                  {
+                      "file":  "resi3.011.part",
+                      "bytes":  52428800,
+                      "sha256":  "9d0c33cdcfc1deb00db2e09962089fe6414518e4f44a9542a0142941d2b94d0f"
+                  },
+                  {
+                      "file":  "resi3.012.part",
+                      "bytes":  52428800,
+                      "sha256":  "3dfdf1bbdc5d1ee3ab7f8d042129d5f03d5b1543234b02aeddedf7c7c9aafed0"
+                  },
+                  {
+                      "file":  "resi3.013.part",
+                      "bytes":  31834240,
+                      "sha256":  "3dd0ffdb29a66caf682a19186b3134093103781c89aaf2e7b17fe7831d08b594"
+                  }
+              ]
+}
